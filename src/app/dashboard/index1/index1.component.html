@@ -1,0 +1,1050 @@
+<!--**********************************
+    Content body start
+******
+
+*****************************-->
+
+<head>
+  <!--load all Font Awesome styles -->
+
+</head>
+
+
+
+
+<div class="content-body">
+
+
+  <!--
+    <div class="d-sm-flex flex-row justify-content-start align-items-center flex-item " style="transform: translateY();">
+      <div class="p-2  " >
+        <mat-form-field color="accent" appearance="fill" style="margin-right: 15px;">
+          <mat-label style="font-family: lato;">Choose Start Date</mat-label>
+          <input matInput [matDatepicker]="picker1">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field color="accent" appearance="fill" style="transform: translateX();">
+          <mat-label style="font-family: lato;">Choose End Date</mat-label>
+          <input matInput [matDatepicker]="picker2">
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2 color="primary"></mat-datepicker>
+        </mat-form-field>
+        <button type="button" class="btn btn-primary align-self-start"
+          style="transform: translate(7%,-19%);" (click) ="myFunction()">Apply</button>
+          <div id="snackbar">Applied Successfully</div>
+      </div>
+      <div class="p-2 card-tabs " style="transform: translateX();">
+        <div>
+        <ul class="nav nav-tabs   " role="tablist" ngbNav #nav="ngbNav">
+          <li class="nav-item " ngbNavItem="Week">
+            <a class="nav-link"  data-toggle="tab" href="#Week" role="tab"
+              aria-selected="false" ngbNavLink>
+              Week
+            </a>
+            <ng-template ngbNavContent>
+              <app-weekly class="bar-chart"></app-weekly>
+            </ng-template>
+          </li>
+          <li class="nav-item" ngbNavItem="Month">
+            <a class="nav-link"  data-toggle="tab" href="#Month" role="tab"
+              aria-selected="false" ngbNavLink>
+              Month
+            </a>
+            <ng-template ngbNavContent>
+              <app-monthly class="bar-chart"></app-monthly>
+            </ng-template>
+          </li>
+          <li class="nav-item" ngbNavItem="Year">
+            <a class="nav-link"  data-toggle="tab" href="#Year" role="tab"
+              aria-selected="false" ngbNavLink>
+              Year
+            </a>
+            <ng-template ngbNavContent>
+              <app-yearly class="bar-chart"></app-yearly>
+            </ng-template>
+          </li>
+        </ul>
+        </div>
+      </div>
+
+    </div>
+  
+  -->
+
+  <div class="d-flex flex-column flex-lg-row justify-content-start flex-item align-items-center" style="transform: translateY();">
+    <div class="p-2 "> <form class="form-inline">
+      <div class="form-group">
+        <div class="input-group">
+          <input class="form-control" placeholder="yyyy-mm-dd" name="dp"  ngbDatepicker #d="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+          </div>
+        </div>
+      </div>
+    </form>
+    
+    </div>
+    <div class="p-2 "> 
+      <form class="form-inline">
+        <div class="form-group">
+          <div class="input-group">
+            <input class="form-control" placeholder="yyyy-mm-dd" name="dp"  ngbDatepicker #c="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary calendar" (click)="c.toggle()" type="button"></button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="p-2 "> <button type="button" class="btn btn-primary" (click)="myFunction()" >Submit</button>
+      <div id="snackbar">Submitted Successfully</div>
+    </div>
+    <div class="p-2 card-tabs">
+      <ul class="nav nav-tabs   " role="tablist" ngbNav #nav="ngbNav">
+        <li class="nav-item " ngbNavItem="Week">
+          <a class="nav-link"  data-toggle="tab" href="#Week" role="tab"
+            aria-selected="false" ngbNavLink>
+            Week
+          </a>
+          <ng-template ngbNavContent>
+            <app-weekly class="bar-chart"></app-weekly>
+          </ng-template>
+        </li>
+        <li class="nav-item" ngbNavItem="Month">
+          <a class="nav-link"  data-toggle="tab" href="#Month" role="tab"
+            aria-selected="false" ngbNavLink>
+            Month
+          </a>
+          <ng-template ngbNavContent>
+            <app-monthly class="bar-chart"></app-monthly>
+          </ng-template>
+        </li>
+        <li class="nav-item" ngbNavItem="Year">
+          <a class="nav-link"  data-toggle="tab" href="#Year" role="tab"
+            aria-selected="false" ngbNavLink>
+            Year
+          </a>
+          <ng-template ngbNavContent>
+            <app-yearly class="bar-chart"></app-yearly>
+          </ng-template>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+  <div class="d-flex flex-row justify-content-end  " style="transform: translateY();">
+    <div class="p-2 ">
+      <div  class="   dropdown notification_dropdown  dropdown-no-icon" ngbDropdown>
+
+        <a class="nav-link  ai-icon " href="javascript:void(0);" role="button" style="float: right;">
+          <i class="fa fa-envelope ndiv "></i>
+
+          <div class="dropdown-menu dropdown-menu-right hid " ngbDropdownMenu>
+            <div id="DZ_W_Notification1" class="widget-media dz-scroll p-3" [perfectScrollbar]>
+              <ul class="timeline">
+                <li>
+                  <div class="timeline-panel">
+                    <div class="media mr-2">
+
+                    </div>
+                    <div class="media-body">
+                      <h6 class="mb-1">Procured content successfully</h6>
+                      <small class="d-block">29 July 2020 - 02:26 PM</small>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="timeline-panel">
+                    <div class="media mr-2 media-info">
+
+                    </div>
+                    <div class="media-body">
+                      <h6 class="mb-1">Procured successfully</h6>
+                      <small class="d-block">29 July 2020 - 02:26 PM</small>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="timeline-panel">
+                    <div class="media mr-2 media-success">
+                      <i class="fa fa-home"></i>
+                    </div>
+                    <div class="media-body">
+                      <h6 class="mb-1">RFQ successful</h6>
+                      <small class="d-block">29 July 2020 - 02:26 PM</small>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="timeline-panel">
+                    <div class="media mr-2">
+
+                    </div>
+                    <div class="media-body">
+                      <h6 class="mb-1">RFQ initiated</h6>
+                      <small class="d-block">29 July 2020 - 02:26 PM</small>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="timeline-panel">
+                    <div class="media mr-2 media-danger">
+
+                    </div>
+                    <div class="media-body">
+                      <h6 class="mb-1">Procurement closed</h6>
+                      <small class="d-block">29 July 2020 - 02:26 PM</small>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="timeline-panel">
+                    <div class="media mr-2 media-primary">
+
+                    </div>
+                    <div class="media-body">
+                      <h6 class="mb-1">Procurement initiated</h6>
+                      <small class="d-block">29 July 2020 - 02:26 PM</small>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <a class="all-notification" href="#" style="font-family: lato;">See all notifications <i
+                class="ti-arrow-right"></i></a>
+          </div>
+        </a>
+
+
+
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <div class="d-flex  justify-content-start flex-items  flex-xl-row flex-column ">
+    <div class="p-2 ">
+      <div class="card ">
+        <div class="card-header border-0 pb-0 d-flex flex-row justify-content-center">
+          <h4 class="card-title">Requisition status</h4>
+
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-xl-12 col-sm-12 d-flex justify-content-center">
+              <div id="pieChart">
+
+
+
+                <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [labels]="chartOptions.labels"
+                  [dataLabels]="chartOptions.dataLabels" [title]="chartOptions.title" [fill]="chartOptions.fill"
+                  [plotOptions]="chartOptions.plotOptions" [stroke]="chartOptions.stroke" [theme]="chartOptions.theme"
+                  [responsive]="chartOptions.responsive" [tooltip]="chartOptions.tooltip" [legend]="chartOptions.legend"
+                  (click)="openLg(longContent)">
+                </apx-chart>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="p-2 " (click)="openXl(content)">
+      <div class="card  " >
+        <div class="card-header border-0 pb-0 d-flex flex-row justify-content-center ">
+          <h4 class="card-title">RFQ status</h4>
+
+        </div>
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-xl-12 col-sm-12 d-flex justify-content-center">
+              <div id="pieChart">
+
+
+                <kendo-chart>
+                  <kendo-chart-area background="transparent" [margin]="30"> </kendo-chart-area>
+                  <kendo-chart-title class="kend" text="" font="20px  lato  " color="#000" fontweight="100">
+                  </kendo-chart-title>
+                  <kendo-chart-series>
+                    <kendo-chart-series-item type="funnel" height="" width="" [data]="model" field="count"
+                      categoryField="stat" colorField="color">
+                      <kendo-chart-series-item-labels background="none" color="white" format="N0">
+                      </kendo-chart-series-item-labels>
+                    </kendo-chart-series-item>
+                  </kendo-chart-series>
+                  <kendo-chart-tooltip>
+                    <ng-template kendoChartSeriesTooltipTemplate let-category="category">
+                      
+                    </ng-template>
+                  </kendo-chart-tooltip>
+                  <kendo-chart-legend [visible]="false"></kendo-chart-legend>
+                </kendo-chart>
+
+
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="p-2 ">
+      <div class="card ">
+
+        <div class="card-header border-0 pb-0 d-flex flex-row justify-content-center">
+          <h4 class="card-title">Purchase orders</h4>
+
+        </div>
+
+        <div class="card-body">
+          <div class="row">
+            <div class="col-xl-12 col-sm-12 d-flex justify-content-center">
+              <div id="pieChart">
+
+
+                <apx-chart [series]="chartOp.series" [chart]="chartOp.chart" [labels]="chartOp.labels"
+                  [tooltip]="chartOp.tooltip" [theme]="chartOp.theme" [title]="chartOp.title" [fill]="chartOp.fill"
+                  [dataLabels]="chartOp.dataLabels" [responsive]="chartOp.responsive" [legend]="chartOp.legend">
+                </apx-chart>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--RFQ Modal Start-->
+
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">RFQ</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="card">
+        <div class="card-header pb-0">
+          <div class="mt-3 mt-sm-0">
+
+
+            <ul class="nav nav-tabs " role="tablist" ngbNav #nav="ngbNav">
+              <li class="nav-item" ngbNavItem="navpills-1">
+                <a class="nav-link fontt" data-toggle="tab" href="#navpills-1" role="tab" aria-selected="false"
+                  ngbNavLink>
+                  Initiated
+                </a>
+                <ng-template ngbNavContent>
+                  <div class="table-responsive">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+
+
+
+                          <th>No</th>
+                          <th>Vendor Name</th>
+                          <th>Item</th>
+                          <th>Amount Quoted</th>
+                          <th>Status</th>
+                          <th scope="col">Edit</th>
+                          <th scope="col">Delete</th>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+
+
+
+
+
+
+                        <tr>
+                          <td>1</td>
+                          <td class="">Rfq</td>
+                          <td class="">Box</td>
+                          <td>200</td>
+                          <td class="">Completed</td>
+
+                          <td>
+                            <button class="btn btn-primary btn-sm">Modify</button>
+                          </td>
+                          <td>
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td class="">Rfq</td>
+                          <td class="">Box</td>
+                          <td>200</td>
+                          <td class="">Completed</td>
+
+                          <td>
+                            <button class="btn btn-primary btn-sm">Modify</button>
+                          </td>
+                          <td>
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                          </td>
+                        </tr>
+
+
+                      </tbody>
+                    </table>
+                  </div>
+                </ng-template>
+
+              </li>
+              <li class="nav-item" ngbNavItem="navpills-2">
+                <a class="nav-link" data-toggle="tab" href="#navpills-2" role="tab" aria-selected="false" ngbNavLink>
+                  Stage 1 Completed
+                </a>
+                <ng-template ngbNavContent>
+                  <div class="table-responsive">
+
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+
+
+
+
+                          <th>No</th>
+                          <th>Vendor Name</th>
+                          <th>Item</th>
+                          <th>Amount Quoted</th>
+                          <th>Status</th>
+                          <th scope="col">Edit</th>
+                          <th scope="col">Delete</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+
+                        <tr>
+                          <td>1</td>
+                          <td class="">Rfq</td>
+                          <td class="">Box</td>
+                          <td>200</td>
+                          <td class="">Completed</td>
+
+                          <td>
+                            <button class="btn btn-primary btn-sm">Modify</button>
+                          </td>
+                          <td>
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td class="">Rfq</td>
+                          <td class="">Box</td>
+                          <td>200</td>
+                          <td class="">Completed</td>
+
+                          <td>
+                            <button class="btn btn-primary btn-sm">Modify</button>
+                          </td>
+                          <td>
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                          </td>
+                        </tr>
+
+
+
+                      </tbody>
+                    </table>
+
+                  </div>
+                </ng-template>
+              </li>
+              <li class="nav-item" ngbNavItem="navpills-3">
+                <a class="nav-link" data-toggle="tab" href="#navpills-3" role="tab" aria-selected="false" ngbNavLink>
+                  Stage 2 Completed
+                </a>
+                <ng-template ngbNavContent>
+                  <div class="table-responsive">
+
+                    <table class="table table-bordered ">
+                      <thead>
+                        <tr>
+
+
+
+
+                          <th>No</th>
+                          <th>Vendor Name</th>
+                          <th>Item</th>
+                          <th>Amount Quoted</th>
+                          <th>Status</th>
+                          <th scope="col">Edit</th>
+                          <th scope="col">Delete</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td class="">Rfq</td>
+                          <td class="">Box</td>
+                          <td>200</td>
+                          <td class="">Completed</td>
+
+                          <td>
+                            <button class="btn btn-primary btn-sm">Modify</button>
+                          </td>
+                          <td>
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>1</td>
+                          <td class="">Rfq</td>
+                          <td class="">Box</td>
+                          <td>200</td>
+                          <td class="">Completed</td>
+
+                          <td>
+                            <button class="btn btn-primary btn-sm">Modify</button>
+                          </td>
+                          <td>
+                            <button class="btn btn-primary btn-sm">Delete</button>
+                          </td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+
+                  </div>
+                </ng-template>
+              </li>
+              <li class="nav-item" ngbNavItem="navpills-4">
+                <a class="nav-link" data-toggle="tab" href="#navpills-4" role="tab" aria-selected="false" ngbNavLink>
+                  Awarded
+                </a>
+                <ng-template ngbNavContent>
+                  <div class="table-responsive">
+
+                    <table class="table table-bordered ">
+                      <thead>
+                        <tr>
+
+
+
+
+                          <th>No</th>
+                          <th>Vendor Name</th>
+                          <th>Item</th>
+                          <th>Amount Quoted</th>
+                          <th>Status</th>
+                          <th scope="col">Edit</th>
+                          <th scope="col">Delete</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td class="">Rfq</td>
+                          <td class="">Box</td>
+                          <td>200</td>
+                          <td class="">Completed</td>
+
+                          <td>
+                            <button class="btn btn-primary btn-sm">Modify</button>
+                          </td>
+                          <td>
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>1</td>
+                          <td class="">Rfq</td>
+                          <td class="">Box</td>
+                          <td>200</td>
+                          <td class="">Completed</td>
+
+                          <td>
+                            <button class="btn btn-primary btn-sm">Modify</button>
+                          </td>
+                          <td>
+                            <button class="btn btn-primary btn-sm">Delete</button>
+                          </td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+
+                  </div>
+                </ng-template>
+              </li>
+              <li class="nav-item" ngbNavItem="navpills-5">
+                <a class="nav-link" data-toggle="tab" href="#navpills-5" role="tab" aria-selected="false" ngbNavLink>
+                  Invoiced
+                </a>
+                <ng-template ngbNavContent>
+                  <div class="table-responsive">
+
+                    <table class="table table-bordered ">
+                      <thead>
+                        <tr>
+
+
+
+
+
+                          <th>No</th>
+                          <th>Vendor Name</th>
+                          <th>Item</th>
+                          <th>Amount Quoted</th>
+                          <th>Status</th>
+                          <th scope="col">Edit</th>
+                          <th scope="col">Delete</th>
+
+
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td class="">Rfq</td>
+                          <td class="">Box</td>
+                          <td>200</td>
+                          <td class="">Completed</td>
+
+                          <td>
+                            <button class="btn btn-primary btn-sm">Modify</button>
+                          </td>
+                          <td>
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>1</td>
+                          <td class="">Rfq</td>
+                          <td class="">Box</td>
+                          <td>200</td>
+                          <td class="">Completed</td>
+
+                          <td>
+                            <button class="btn btn-primary btn-sm">Modify</button>
+                          </td>
+                          <td>
+                            <button class="btn btn-primary btn-sm">Delete</button>
+                          </td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+
+                  </div>
+                </ng-template>
+              </li>
+
+              <li class="nav-item" ngbNavItem="navpills-6">
+                <a class="nav-link" data-toggle="tab" href="#navpills-6" role="tab" aria-selected="false" ngbNavLink>
+                  Closed
+                </a>
+                <ng-template ngbNavContent>
+                  <div class="table-responsive">
+
+                    <table class="table table-bordered ">
+                      <thead>
+                        <tr>
+
+
+
+
+
+                          <th>No</th>
+                          <th>Vendor Name</th>
+                          <th>Item</th>
+                          <th>Amount Quoted</th>
+                          <th>Status</th>
+                          <th scope="col">Edit</th>
+                          <th scope="col">Delete</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td class="">Rfq</td>
+                          <td class="">Box</td>
+                          <td>200</td>
+                          <td class="">Completed</td>
+
+                          <td>
+                            <button class="btn btn-primary btn-sm">Modify</button>
+                          </td>
+                          <td>
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>1</td>
+                          <td class="">Rfq</td>
+                          <td class="">Box</td>
+                          <td>200</td>
+                          <td class="">Completed</td>
+
+                          <td>
+                            <button class="btn btn-primary btn-sm">Modify</button>
+                          </td>
+                          <td>
+                            <button class="btn btn-primary btn-sm">Delete</button>
+                          </td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+
+                  </div>
+                </ng-template>
+              </li>
+
+
+
+
+            </ul>
+
+
+
+
+
+
+          </div>
+        </div>
+        <div class="card-body ">
+          <div [ngbNavOutlet]="nav" class=""></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+
+
+
+
+
+
+  <!--RFQ Modal End-->
+
+
+
+
+
+  <!--PR modal start-->
+
+  <ng-template #longContent let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Purchase Requisition </h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="card">
+        <div class="card-header pb-0">
+          <div class="mt-3 mt-sm-0">
+
+
+            <ul class="nav nav-tabs" role="tablist" ngbNav #nav="ngbNav">
+              <li class="nav-item" ngbNavItem="navpills-1">
+                <a class="nav-link" data-toggle="tab" href="#navpills-1" role="tab" aria-selected="false" ngbNavLink>
+                  Processing
+                </a>
+                <ng-template ngbNavContent>
+                  <div class="table-responsive">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+
+
+
+                          <th scope="col">No</th>
+                          <th scope="col">Department</th>
+                          <th scope="col">Item</th>
+                          <th scope="col">Status</th>
+                          <th scope="col">Edit</th>
+                          <th scope="col">Delete</th>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+
+
+
+
+
+
+                        <tr>
+                          <td>1</td>
+                          <td class="">Rfq</td>
+                          <td class="">Box</td>
+                          <td class="">Completed</td>
+
+                          <td>
+                            <button class="btn btn-primary btn-sm">Modify</button>
+                          </td>
+                          <td>
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td class="">Rfq</td>
+                          <td class="">Box</td>
+                          <td class="">Completed</td>
+
+                          <td>
+                            <button class="btn btn-primary btn-sm">Modify</button>
+                          </td>
+                          <td>
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                          </td>
+                        </tr>
+
+
+                      </tbody>
+                    </table>
+                  </div>
+                </ng-template>
+
+              </li>
+              <li class="nav-item" ngbNavItem="navpills-2">
+                <a class="nav-link" data-toggle="tab" href="#navpills-2" role="tab" aria-selected="false" ngbNavLink>
+                  Waiting
+                </a>
+                <ng-template ngbNavContent>
+                  <div class="table-responsive">
+
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+
+
+
+                          <th scope="col">No</th>
+                          <th scope="col">Department</th>
+                          <th scope="col">Item</th>
+                          <th scope="col">Status</th>
+                          <th scope="col">Edit</th>
+                          <th scope="col">Delete</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+
+                        <tr>
+                          <td>1</td>
+                          <td class="">Rfq</td>
+                          <td class="">Box</td>
+                          <td class="">Completed</td>
+
+                          <td>
+                            <button class="btn btn-primary btn-sm">Modify</button>
+                          </td>
+                          <td>
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td class="">Rfq</td>
+                          <td class="">Box</td>
+                          <td class="">Completed</td>
+
+                          <td>
+                            <button class="btn btn-primary btn-sm">Modify</button>
+                          </td>
+                          <td>
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                          </td>
+                        </tr>
+
+
+
+                      </tbody>
+                    </table>
+
+                  </div>
+                </ng-template>
+              </li>
+              <li class="nav-item" ngbNavItem="navpills-3">
+                <a class="nav-link" data-toggle="tab" href="#navpills-3" role="tab" aria-selected="false" ngbNavLink>
+                  Completed
+                </a>
+                <ng-template ngbNavContent>
+                  <div class="table-responsive">
+
+                    <table class="table table-bordered ">
+                      <thead>
+                        <tr>
+
+
+
+                          <th scope="col">No</th>
+                          <th scope="col">Department</th>
+                          <th scope="col">Item</th>
+                          <th scope="col">Status</th>
+                          <th scope="col">Edit</th>
+                          <th scope="col">Delete</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td class="">Rfq</td>
+                          <td class="">Box</td>
+                          <td class="">Completed</td>
+
+                          <td>
+                            <button class="btn btn-primary btn-sm">Modify</button>
+                          </td>
+                          <td>
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>1</td>
+                          <td class="">Rfq</td>
+                          <td class="">Box</td>
+                          <td class="">Completed</td>
+
+                          <td>
+                            <button class="btn btn-primary btn-sm">Modify</button>
+                          </td>
+                          <td>
+                            <button class="btn btn-primary btn-sm">Delete</button>
+                          </td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+
+                  </div>
+                </ng-template>
+              </li>
+
+            </ul>
+
+
+
+
+
+
+          </div>
+        </div>
+        <div class="card-body ">
+          <div [ngbNavOutlet]="nav" class=""></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+
+
+
+  <!--PR modal end-->
+
+
+
+
+ 
+
+
+  
+
+  <!--MODAL AREA END-->
+
+
+
+
+
+
+  <!--THIRD SECTION START-->
+
+  
+
+  <div class=" " style="position: relative;transform: translateX(-1%);">
+
+
+    <div class="container-fluid graph-apex">
+      <div class="row">
+        <div class="col-xl-3 col-sm-6 col-12">
+          <app-graph1></app-graph1>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+          <app-graph2></app-graph2>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+          <app-graph3></app-graph3>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+          <app-graph4></app-graph4>
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+  
+
+
+
+
+  <!--THIRD SECTION END-->
+
+  <!--**********************************
+    Content body end
+***********************************-->
+
+
+  <script>
+    AOS.init();
+  </script>
+</div>

@@ -1,0 +1,29 @@
+modal-dialog{
+    height: 90px !important;
+}
+
+
+@media only screen and (max-width: 568px){
+   .graph-text{
+       font-size: 12px;
+   }
+
+   .graph-i{
+       font-size: 8px;
+   }
+ }
+
+
+
+ @media only screen and (max-width: 768px){
+  
+ }
+
+ @media only screen and (max-width: 992px){
+   
+ }
+
+
+ @media only screen and (max-width: 1192px){
+   
+ }
